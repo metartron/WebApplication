@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7713F297-7AC5-4C16-B529-CFE429BBBF0A}</ProjectGuid>
+    <ProjectGuid>{98D02CA3-5D5F-4F93-9DD6-1DF99BA2FAD6}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ASPnet</RootNamespace>
-    <AssemblyName>ASPnet</AssemblyName>
+    <RootNamespace>Homework</RootNamespace>
+    <AssemblyName>Homework</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -68,80 +68,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="01FirstWebPage.aspx" />
-    <Content Include="02Var.aspx" />
-    <Content Include="03Statement-1.aspx" />
-    <Content Include="04practice-1.aspx" />
-    <Content Include="05if_statement.aspx" />
-    <Content Include="06switch-statement.aspx" />
-    <Content Include="07for_statement.aspx" />
-    <Content Include="08foreach_statement.aspx" />
-    <Content Include="09while_statement.aspx" />
+    <Content Include="HW1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="01FirstWebPage.aspx.cs">
-      <DependentUpon>01FirstWebPage.aspx</DependentUpon>
+    <Compile Include="HW1.aspx.cs">
+      <DependentUpon>HW1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="01FirstWebPage.aspx.designer.cs">
-      <DependentUpon>01FirstWebPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="02Var.aspx.cs">
-      <DependentUpon>02Var.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="02Var.aspx.designer.cs">
-      <DependentUpon>02Var.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="03Statement-1.aspx.cs">
-      <DependentUpon>03Statement-1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="03Statement-1.aspx.designer.cs">
-      <DependentUpon>03Statement-1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="04practice-1.aspx.cs">
-      <DependentUpon>04practice-1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="04practice-1.aspx.designer.cs">
-      <DependentUpon>04practice-1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="05if_statement.aspx.cs">
-      <DependentUpon>05if_statement.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="05if_statement.aspx.designer.cs">
-      <DependentUpon>05if_statement.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="06switch-statement.aspx.cs">
-      <DependentUpon>06switch-statement.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="06switch-statement.aspx.designer.cs">
-      <DependentUpon>06switch-statement.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="07for_statement.aspx.cs">
-      <DependentUpon>07for_statement.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="07for_statement.aspx.designer.cs">
-      <DependentUpon>07for_statement.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="08foreach_statement.aspx.cs">
-      <DependentUpon>08foreach_statement.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="08foreach_statement.aspx.designer.cs">
-      <DependentUpon>08foreach_statement.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="09while_statement.aspx.cs">
-      <DependentUpon>09while_statement.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="09while_statement.aspx.designer.cs">
-      <DependentUpon>09while_statement.aspx</DependentUpon>
+    <Compile Include="HW1.aspx.designer.cs">
+      <DependentUpon>HW1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -167,9 +103,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62424</DevelopmentServerPort>
+          <DevelopmentServerPort>57489</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62424/</IISUrl>
+          <IISUrl>http://localhost:57489/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
