@@ -97,14 +97,26 @@ namespace Homework
             //////////////////////////////////////////
             Response.Write("<hr />");
             Response.Write("8.	請利用回圈寫一九九乘法表。<br>");
-
+           
+            Response.Write("<table border='1'> <tbody>");
             for (int i = 2; i < 10; i++)
             {
+                if (i==2 || i==6)
+                {
+                    Response.Write("<tr>");
+                }
+                Response.Write("<td>");
                 for (int j = 1; j < 10; j++)
                 {
                     Response.Write(i+"*"+j+"="+(i*j)+"<br>");
                 }
+                Response.Write("</td>");
+                if (i == 5 || i == 9)
+                {
+                    Response.Write("</tr>");
+                }
             }
+            Response.Write("</tbody></table> ");
         }
     }
 }
