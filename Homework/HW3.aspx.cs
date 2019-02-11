@@ -40,28 +40,30 @@ namespace Homework
             }
             Response.Write("<hr>");
             ///////////////////////////////////////////////////////////////////////////
+            int ifixrow = 4;
+            int ifoxcol = 13;
             int irow = 0;
             int icol = 0;
-            int[,] sPoker = new int[4, 13];
+            int[,] sPoker = new int[ifixrow, ifoxcol];
 
             for (int i = 0; i < iLen ; i++)
             {
-                if (irow == sPoker.GetLongLength(0))
+                if (irow == ifixrow)
                 {
                     irow = 0;
                     icol++;
                 }
                 sPoker[irow, icol] = randomNum[i];
                 irow++;
-                if (icol == sPoker.GetLongLength(1))
+                if (icol == ifoxcol)
                 {
                     break;
                 }
             }
-            for (int i = 0; i < sPoker.GetLongLength(0); i++)
+            for (int i = 0; i < ifixrow; i++)
             {
                 Response.Write((i+1) +" : ");
-                for (int j = 0; j < sPoker.GetLongLength(1); j++)
+                for (int j = 0; j < ifoxcol; j++)
                 {
                     Response.Write("<img src='poker_img/" + sPoker[i,j] + ".gif' />");
                 }
