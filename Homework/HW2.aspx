@@ -18,6 +18,24 @@
             <br />
             <hr />
         </div>
+        <p>
+            <asp:Label ID="Label2" runat="server" Text="最大公因數判斷:"></asp:Label>
+            <asp:TextBox ID="txtBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtBox3" runat="server"></asp:TextBox>
+            <asp:Button ID="btn2" runat="server" OnClick="btn2_Click" Text="判斷" />
+        </p>
+        <p>
+            <asp:Label ID="lblResult2" runat="server" Text="結果:"></asp:Label>
+        </p>
+        <hr />
+        <p>
+            <asp:Label ID="Label3" runat="server" Text="迴文判斷:"></asp:Label>
+            <asp:TextBox ID="txtBox4" runat="server"></asp:TextBox>
+            <asp:Button ID="btn3" runat="server" OnClick="btn3_Click" Text="判斷" />
+        </p>
+        <p>
+            <asp:Label ID="lblResult3" runat="server" Text="結果:"></asp:Label>
+        </p>
     </form>
 </body>
 </html>
