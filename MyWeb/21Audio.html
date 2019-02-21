@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #play {
+            border:2px solid;
+            box-shadow:3px 3px 3px black;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="audio">
+        <!--controls="controls"-->
+        <source src="mp3/Half%20a%20Life%20Official%20Music%20Video.mp3" type="audio/mpeg" />
+    </audio>
+
+    <span id="play" onclick="PlayMusic">Play</span>
+    <span id="stop" onclick="StopMusic">Stop</span>
+    <span id="pause" onclick="PauseMusic">Pause</span>
+
+    <script>
+        var audio = document.getElementById("audio");
+
+        function PlayMusic() {
+            audio.play();
+        }
+        function StopMusic() {
+            audio.pause();
+            audio.load();
+        }
+        function PauseMusic() {
+            audio.pause();
+        }
+
+    </script>
+</body>
+</html>

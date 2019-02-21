@@ -86,6 +86,9 @@
     <Content Include="15CSS_selector.html" />
     <Content Include="17CSS_Position.html" />
     <Content Include="18CSS_Position2.html" />
+    <Content Include="19JS_Test.html" />
+    <Content Include="20Password.html" />
+    <Content Include="21Audio.html" />
     <Content Include="Chrysanthemum.jpg" />
     <Content Include="images2\Desert.jpg" />
     <Content Include="Hydrangeas.jpg" />
@@ -96,11 +99,13 @@
     <Content Include="images\banner1.jpg" />
     <Content Include="images\banner2.jpg" />
     <Content Include="images\bottom.jpg" />
+    <Content Include="images\car.png" />
     <Content Include="images\Koala.jpg" />
     <Content Include="images\left.jpg" />
     <Content Include="images\Lighthouse.jpg" />
     <Content Include="images\right.jpg" />
     <Content Include="images\top.jpg" />
+    <Content Include="mp3\Half a Life Official Music Video.mp3" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

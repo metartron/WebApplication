@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #car {
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+
+    X:<input id="txtX" type="text" />
+    Y:<input id="txtY" type="text" />
+    <hr />
+    <h1 id="showTime"></h1>
+    <hr />
+    <img id="car" src="images/car.png" width="50">
+
+    <script>
+        //name = prompt("請輸入您的大名:");
+        //console.log(name);
+        //document.write(name);
+        //window.alert(name);
+
+        ///////////////////////////////////////
+
+        var m;
+        m = 123;
+        m = 121.23;
+        m = "aaa123";
+        console.log(m);
+
+        ///////////////////////////////////////////
+        var k;
+        console.log(k);
+        //document.write(k);
+
+        if (k)
+            document.write("有定義");
+        else
+            document.write("沒定義");
+        ///////////////////////////////////////////
+
+        document.write("<hr/>");
+        //數值資料型態的分類
+        a = 123;//10的進位
+        console.log("a=" + a);
+        a = 0123;//8進位 - 前面有零
+        console.log("a=" + a);//自動轉10進位顯示
+        a = 0678;//10的進位 - 裡面有超過8的字
+        console.log("a=" + a);
+
+        a = 0x753AC4;//十六進位-前面有0x
+        console.log("a=" + a);//自動轉10進位顯示
+
+        a = 0.0005;
+        console.log("a=" + a);
+        a = 5e-4;//5的負4次方
+        console.log("a=" + a);
+
+        e = 123;
+        document.write(e); //自動轉10進位
+
+        /////////////////////////////////////////
+
+        //alert("您的螢幕解析度為" + screen.width + "*" + screen.height);
+        //document.onclick = function () {
+        //    //alert(event.pageX);
+        //    txtX.value = event.pageX;
+        //    txtY.value = event.pageY;
+        //}
+
+        document.onmousemove = function (evnt) {
+            //alert(evnt.pageX);
+            txtX.value = evnt.pageX;
+            txtY.value = evnt.pageY;
+        }
+
+        ////////////////////////////////////////
+        //小時鐘
+        function showMyTime() {
+            var myDate = new Date();
+            var h = myDate.getHours();
+            var m = myDate.getMinutes();
+            var s = myDate.getSeconds();
+
+            if (h < 10) h = "0" + h;
+            if (m < 10) m = "0" + m;
+            s = s < 10 ? "10" + s : s;
+
+            showTime.innerText = h + ":" + m + ":" + s;
+
+            setTimeout(showMyTime, 1000);
+        }
+
+        showMyTime();
+        //////////////////////////////////////////
+        var car = document.getElementById("car");
+        function MyAnimation() {
+            var x = car.offsetLeft;
+            x += 2;
+            car.style.left = x + "px";
+            
+            //if(car.style.left<="1850")
+            setTimeout(MyAnimation, 100);
+        }
+        MyAnimation();
+
+
+    </script>
+</body>
+</html>
