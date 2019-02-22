@@ -105,7 +105,9 @@
     <Content Include="images\Lighthouse.jpg" />
     <Content Include="images\right.jpg" />
     <Content Include="images\top.jpg" />
-    <Content Include="mp3\Half a Life Official Music Video.mp3" />
+    <Content Include="mp3\halflife.mp3" />
+    <Content Include="mp3\Joker.mp3" />
+    <Content Include="mp3\brave.mp3" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
