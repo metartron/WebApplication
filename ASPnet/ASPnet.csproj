@@ -80,6 +80,8 @@
     <Content Include="13WebForm_StandardControls.aspx" />
     <Content Include="14WebForm_MemberForm.aspx" />
     <Content Include="15WebForm_Validation.aspx" />
+    <Content Include="16DB_Connection.aspx" />
+    <Content Include="17GridView_DataSource.aspx" />
     <Content Include="poker_img\1.gif" />
     <Content Include="poker_img\10.gif" />
     <Content Include="poker_img\11.gif" />
@@ -218,6 +220,20 @@
     </Compile>
     <Compile Include="15WebForm_Validation.aspx.designer.cs">
       <DependentUpon>15WebForm_Validation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="16DB_Connection.aspx.cs">
+      <DependentUpon>16DB_Connection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="16DB_Connection.aspx.designer.cs">
+      <DependentUpon>16DB_Connection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="17GridView_DataSource.aspx.cs">
+      <DependentUpon>17GridView_DataSource.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="17GridView_DataSource.aspx.designer.cs">
+      <DependentUpon>17GridView_DataSource.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
