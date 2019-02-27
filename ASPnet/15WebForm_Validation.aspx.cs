@@ -68,34 +68,81 @@ namespace ASPnet
         #region 身分證驗證
         protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            args.IsValid = true;//驗證通過 errormessage不會出現
 
-            //除了檢查碼外每個數字的存放空間 
-            int[] iSeed = new int[10];
 
             //建立字母陣列(A~Z)
             //A=10 B=11 C=12 D=13 E=14 F=15 G=16 H=17 J=18 K=19 L=20 M=21 N=22
             //P=23 Q=24 R=25 S=26 T=27 U=28 V=29 X=30 Y=31 W=32  Z=33 I=34 O=35 
-            string[] sMapping = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "X", "Y", "W", "Z", "I", "O" } ;
+            string id = txtID.Text;
 
-            string sFirst = txtID.Text.Substring(0, 1); //取第一個英文數字
-            for (int index = 0; index < sMapping.Length; index++)
+            string[] eng = {"A", "B", "C", "D", "E", "F", "G", "H", "J", "K",
+                "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "X", "Y", "W",
+                "Z", "I", "O" };
+
+            int intEng = 0;
+
+            for (int i = 0; i < eng.Length; i++)
             {
-                if (sMapping[index] == sFirst)
+                if (eng[i] == id.Substring(0, 1).ToUpper())
                 {
-                    index += 10;
-                    //10進制的高位元放入存放空間   (權重*1)
-                    iSeed[0] = index / 10;
-
-                    //10進制的低位元*9後放入存放空間 (權重*9)
-                    iSeed[1] = (index % 10) * 9;
-
+                    intEng = i + 10;
                     break;
                 }
+
             }
 
+            //假設n=17
+            int n1 = intEng / 10;  //n1=1
+            int n2 = intEng % 10;  //n2=7
+
+
+
+            int[] a = new int[9];
+            for (int i = 0; i < a.Length; i++)
+            {
+                a[i] = Convert.ToInt16(id.Substring(i + 1, 1));
+
+            }
+
+            int sum = 0;
+            for (int i = 0; i < 8; i++)
+            {
+
+                sum += a[i] * (8 - i);
+            }
+
+            int n = 0;
+            n = n1 + n2 * 9 + sum + a[8];
+
+            //n1 +n2*9+a[0]*8+a[1]*7*a[2]*6+a[3]*5
+
+
+            if (n % 10 == 0)
+                args.IsValid = true;
+            else
+                args.IsValid = false;
 
         }
         #endregion
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (this.IsValid)
+            {
+                Response.Write("表單已成功送到伺服器");
+            }
+        }
+
+        protected void CustomValidator2_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (ltbInterestFinal.Items.Count < 3)
+            {
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
+            }
+        }
     }
 }

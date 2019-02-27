@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPnet", "ASPnet\ASPnet.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework", "Homework\Homework.csproj", "{98D02CA3-5D5F-4F93-9DD6-1DF99BA2FAD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeeNow", "SeeNow\SeeNow.csproj", "{34BA7304-0402-4933-9DAA-69A6207A50CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{98D02CA3-5D5F-4F93-9DD6-1DF99BA2FAD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98D02CA3-5D5F-4F93-9DD6-1DF99BA2FAD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98D02CA3-5D5F-4F93-9DD6-1DF99BA2FAD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34BA7304-0402-4933-9DAA-69A6207A50CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34BA7304-0402-4933-9DAA-69A6207A50CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34BA7304-0402-4933-9DAA-69A6207A50CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34BA7304-0402-4933-9DAA-69A6207A50CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

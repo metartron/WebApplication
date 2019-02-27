@@ -68,9 +68,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="16Homework4.aspx" />
     <Content Include="HW1.aspx" />
     <Content Include="HW2.aspx" />
     <Content Include="HW3.aspx" />
+    <Content Include="HW4.aspx" />
     <Content Include="poker_img\1.gif" />
     <Content Include="poker_img\10.gif" />
     <Content Include="poker_img\11.gif" />
@@ -126,6 +128,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="16Homework4.aspx.cs">
+      <DependentUpon>16Homework4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="16Homework4.aspx.designer.cs">
+      <DependentUpon>16Homework4.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HW1.aspx.cs">
       <DependentUpon>HW1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -146,6 +155,13 @@
     </Compile>
     <Compile Include="HW3.aspx.designer.cs">
       <DependentUpon>HW3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HW4.aspx.cs">
+      <DependentUpon>HW4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HW4.aspx.designer.cs">
+      <DependentUpon>HW4.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

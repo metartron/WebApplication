@@ -22,6 +22,15 @@ namespace ASPnet {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// ValidationSummary1 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        
+        /// <summary>
         /// txtAccount 控制項。
         /// </summary>
         /// <remarks>
@@ -263,6 +272,15 @@ namespace ASPnet {
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox ltbInterestFinal;
+        
+        /// <summary>
+        /// CustomValidator2 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator2;
         
         /// <summary>
         /// btnYes 控制項。

@@ -22,6 +22,15 @@
             color: yellow;
             text-align: center;
         }
+        #settime {
+            background-color: #808080;
+            height: 20px;
+        }
+        #progress {
+            background-color: red;
+            height: 20px;
+            width:0;
+        }
     </style>
 </head>
 <body>
@@ -36,6 +45,9 @@
             <option value="mp3/halflife.mp3">一半人生 五月天</option>
             <option value="mp3/brave.mp3">終於勇敢了</option>
             <option value="mp3/joker.mp3">肆無忌憚</option>
+            <option value="mp3/halflife.mp3">4444444</option>
+            <option value="mp3/brave.mp3">5555555</option>
+            <option value="mp3/joker.mp3">66666666</option>
         </select>
 
         <div id="FunBtn">
@@ -46,7 +58,10 @@
             <span id="prevtime">7</span> <!--倒轉-->
             <span id="nexttime">8</span> <!--快轉-->
             <span id="nextsong">:</span> <!--下一首-->
-            <span id="muted">V</span>
+            <span id="muted">V</span><!--靜音-->
+            <span id="loop">q</span><!--單曲循環-->
+            <span id="random">s</span><!--隨機循環-->
+            <span id="allloop">`</span><!--全曲循環-->
         </div>
         <div id="volume">
             <!--音量控制-->
@@ -54,10 +69,14 @@
             <input id="volM" type="button" value="-" />
             <input id="volP" type="button" value="+" />
             <input id="volValue" type="text"  readonly="readonly" />
-            
+        </div>
+        <div id="settime">
+            <div id="progress"></div>
         </div>
         <div id="InfoPanel">
+            <div id="duration">00:00 / 00:00</div>
             <marquee id="info">Pleace clcik play button</marquee>
+            <div id="info2"></div>
         </div>
     </div>
 
@@ -74,8 +93,13 @@
             var prevsong = document.getElementById("prevsong");
             var nextsong = document.getElementById("nextsong");
             var muted = document.getElementById("muted");
+            var loop = document.getElementById("loop");
+            var random = document.getElementById("random");
+            var allloop = document.getElementById("allloop");
 
             var info = document.getElementById("info");
+            var info2 = document.getElementById("info2");
+            var duration = document.getElementById("duration");
 
             var music = document.getElementById("music");
 
@@ -84,16 +108,24 @@
             var volP = document.getElementById("volP");
             var volValue = document.getElementById("volValue");
 
+            var progress = document.getElementById("progress");
+            var settime = document.getElementById("settime");
+            var ControlPanel = document.getElementById("ControlPanel");
+
             //物件上面加個click事件
             play.addEventListener("click", PlayMusic);
             //pause.addEventListener("click", PauseMusic);
             stop.addEventListener("click", StopMusic);
-            music.addEventListener("change", ChangeMusic);
+            music.addEventListener("change", function () { ChangeMusic(music.selectedIndex); });
             prevtime.addEventListener("click", function () { TimeChange(false); });
             nexttime.addEventListener("click", function () { TimeChange(true); });
-            prevsong.addEventListener("click", function () { SongChange(false); });
-            nextsong.addEventListener("click", function () { SongChange(true); });
+            prevsong.addEventListener("click", function () { SongChange("p"); });
+            nextsong.addEventListener("click", function () { SongChange("n"); });
             muted.addEventListener("click", SetMuted);
+            loop.addEventListener("click", loopSong);
+            random.addEventListener("click", randomSong);
+            allloop.addEventListener("click", allloopSong);
+            settime.addEventListener("click", function () { setTimeUseBar(event); });
 
             vol.addEventListener("change", function () { VolumeChange("c"); }); //IE使用change事件;其他瀏覽器使用input事件
             volM.addEventListener("click", function () { VolumeChange("m"); });
@@ -101,6 +133,81 @@
 
             //事件操作
             VolumeChange("c");
+
+            function setTimeUseBar(evt) {
+                audio.currentTime = audio.duration * (evt.offsetX / ControlPanel.clientWidth);
+            }
+
+            function getDuration() {
+                var durationTime = getTimeFormat(audio.duration);
+                var currentTime = getTimeFormat(audio.currentTime);
+                duration.innerText = currentTime + " / " + durationTime;
+
+                progress.style.width = Math.floor(audio.currentTime / audio.duration *100)+"%";
+
+                setTimeout(getDuration, 1000);
+
+                if (durationTime == currentTime) {
+                    if (info2.innerText == "單曲循環") {
+                        SongChange("s");
+                    }
+                    else if (info2.innerText == "隨機播放") {
+                        SongChange("r");
+                    }
+                    else if (music.selectedIndex == music.options.length - 1) {
+                        if (info2.innerText == "全曲循環") {
+                            SongChange("a");
+                        }
+                        else {
+                            StopMusic();
+                        }
+                    }
+                    else {
+                        SongChange("c");
+                    }
+
+                }
+
+            }
+
+            function getTimeFormat(TimeSec) {
+                var min = Math.floor(TimeSec / 60);
+                var sec = Math.floor(TimeSec) - min * 60;
+                min = min < 10 ? "0" + min : min;
+                sec = sec < 10 ? "0" + sec : sec;
+                return min + ":" + sec;
+            }
+            //全曲循環
+            function allloopSong() {
+                if (info2.innerText == "全曲循環") {
+                    info2.innerText = "";
+                }
+                else {
+                    info2.innerText = "全曲循環";
+                }
+            }
+
+            //隨機播放
+            function randomSong() {
+                if (info2.innerText == "隨機播放") {
+                    info2.innerText = "";
+                }
+                else {
+                    info2.innerText = "隨機播放";
+                }
+            }
+
+            //單曲循環
+            function loopSong() {
+                if (info2.innerText == "單曲循環") {
+                    info2.innerText = "";
+                }
+                else {
+                    info2.innerText = "單曲循環";
+                }
+            }
+
+            
             function SetMuted() {
                 if (muted.innerText == "V") {
                     audio.muted = true;
@@ -134,29 +241,50 @@
                 else
                     audio.currentTime -= 10;
             }
-            function SongChange(boolFlag) {
+            function SongChange(strFlag) {
+                var index = music.selectedIndex;
+                var length = music.options.length;
 
-                if (boolFlag) {
-                    if (music.selectedIndex < music.options.length - 1) {
-                        music.selectedIndex++;
-                    }
-                    else {
-                        music.selectedIndex = 0;
-                    }
+                switch (strFlag){
+                    case "n"://下一首
+                        if (index < length - 1) {
+                            index++;
+                        }
+                        else {
+                            index = 0;
+                        }
+                        break;
+                    case "p"://上一首
+                        if (index == 0)
+                            index = length - 1;
+                        else
+                            index--;
+                        break;
+                    case "s"://單曲循環
+                        audio.currentTime = 0;
+                        
+                        break;
+                    case "r"://隨機播放
+                        index = Math.floor(Math.random() * length);
+                        break;
+                    case "a"://全曲循環
+                        index = 0;
+                        break;
+                    default:
+                        index++;
+                        break;
                 }
-                else {
-                    if (music.selectedIndex == 0)
-                        music.selectedIndex = music.options.length - 1;
-                    else
-                        music.selectedIndex--;
-                }
-                console.log(music.selectedIndex);
-                console.log(music.options.length);
-                ChangeMusic();
+                //song.src = music.options[index].value;
+                //music.options[index].selected = true;
+                //audio.load();
+                //audio.play();
+
+                ChangeMusic(index);
             }
  
             function PlayMusic() {
                 audio.play();
+                getDuration();
                 ShowStatus(1);
                 if (play.innerText == "4")
                     play.innerText = ";";
@@ -176,8 +304,11 @@
                 ShowStatus(3);
             }
 
-            function ChangeMusic() {
-                song.src = music.options[music.selectedIndex].value;
+            function ChangeMusic(index) {
+
+                //song.src = music.options[music.selectedIndex].value;
+                song.src = music.options[index].value;
+                music.options[index].selected = true;
                 audio.load();
                 if (info.innerText == "音樂播放中") {
                     //PlayMusic();

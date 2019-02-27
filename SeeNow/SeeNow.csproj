@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F967CA18-3158-48BD-96BB-3AFB9A067D34}</ProjectGuid>
+    <ProjectGuid>{34BA7304-0402-4933-9DAA-69A6207A50CA}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyWeb</RootNamespace>
-    <AssemblyName>MyWeb</AssemblyName>
+    <RootNamespace>SeeNow</RootNamespace>
+    <AssemblyName>SeeNow</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -68,53 +68,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="01Heading.html" />
-    <Content Include="02pre.html" />
-    <Content Include="03hr.html" />
-    <Content Include="04font.html" />
-    <Content Include="05division.html" />
-    <Content Include="06item.html" />
-    <Content Include="07a.html" />
-    <Content Include="08image.html" />
-    <Content Include="09table.html" />
-    <Content Include="10form.html" />
-    <Content Include="11CSS_font.html" />
-    <Content Include="12CSS_text.html" />
-    <Content Include="13CSS_color.html" />
-    <Content Include="14CSS_table.html" />
-    <Content Include="16CSS_selector_table.html" />
-    <Content Include="15CSS_selector.html" />
-    <Content Include="17CSS_Position.html" />
-    <Content Include="18CSS_Position2.html" />
-    <Content Include="19JS_Test.html" />
-    <Content Include="20Password.html" />
-    <Content Include="21JSAudio.html" />
-    <Content Include="Chrysanthemum.jpg" />
-    <Content Include="images2\Desert.jpg" />
-    <Content Include="Hydrangeas.jpg" />
-    <Content Include="hyperlink\01Heading.html" />
-    <Content Include="images\08image2.html" />
-    <Content Include="images2\Jellyfish.jpg" />
-    <Content Include="images\ad.jpg" />
-    <Content Include="images\banner1.jpg" />
-    <Content Include="images\banner2.jpg" />
-    <Content Include="images\bottom.jpg" />
-    <Content Include="images\car.png" />
-    <Content Include="images\Koala.jpg" />
-    <Content Include="images\left.jpg" />
-    <Content Include="images\Lighthouse.jpg" />
-    <Content Include="images\right.jpg" />
-    <Content Include="images\top.jpg" />
-    <Content Include="mp3\halflife.mp3" />
-    <Content Include="mp3\Joker.mp3" />
-    <Content Include="mp3\brave.mp3" />
+    <Content Include="js\jquery-1.4.1.js" />
     <Content Include="Web.config" />
+    <Content Include="圖形驗證碼2.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="readSessionValidateNumber.ashx.cs">
+      <DependentUpon>readSessionValidateNumber.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ValidateNumber.ashx.cs">
+      <DependentUpon>ValidateNumber.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="圖形驗證碼2.aspx.cs">
+      <DependentUpon>圖形驗證碼2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="圖形驗證碼2.aspx.designer.cs">
+      <DependentUpon>圖形驗證碼2.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="readSessionValidateNumber.ashx" />
+    <Content Include="ValidateNumber.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -135,9 +112,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54940</DevelopmentServerPort>
+          <DevelopmentServerPort>50519</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54940/</IISUrl>
+          <IISUrl>http://localhost:50519/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
