@@ -12,20 +12,22 @@
             width: 450px;
             height: 500px;
             margin: auto;
+            border:double;
         }
             #tbMember table {
                 width: 100%;
             }
-            #tbMember tr > td:first-child {
+            #tbMember>tbody>tr>td:first-child {
                 text-align: right;
             }
-            #tbMember tr:last-child > td {
+
+            #tbMember>tbody>tr:last-child > td {
                 text-align: center;
             }
-           #inTable tr>td{
-               vertical-align:middle;
-               font-size:10px;
-           }
+            #tbMember table>tbody>tr>td {
+                text-align: center;
+            }
+       
     </style>
 </head>
 <body>
@@ -103,7 +105,7 @@
                 <tr>
                     <td >興趣:</td>
                     <td  >
-                        <table id="inTable">
+                        <table >
                             <tr>
                                 <td rowspan="4"> 
                         <asp:ListBox ID="ltbInterest" runat="server" Width="100" Height="150">
@@ -119,7 +121,7 @@
                         </asp:ListBox>
 
                                 </td>
-                                <td> 
+                                <td > 
 
                         <asp:Button ID="btnAll" runat="server" Text=">>"  CausesValidation="False" />
                                 </td>

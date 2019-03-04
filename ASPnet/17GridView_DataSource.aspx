@@ -25,7 +25,7 @@
             <asp:GridView ID="GridView2" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False">
                 <Columns>
                     <asp:BoundField DataField="Name" HeaderText="姓名" DataFormatString="<{0}>"/>
-                    <asp:BoundField DataField="Birthday" HeaderText="生日" DataFormatString="{0:d}" />
+                    <asp:BoundField DataField="Birthday" HeaderText="生日" DataFormatString="{0:D}" />
                     <asp:BoundField DataField="Email" HeaderText="Email"  />
                     <asp:BoundField DataField="Gender" HeaderText="Gender" />
                     <asp:BoundField DataField="EduLevel" HeaderText="EduLevel"  />
