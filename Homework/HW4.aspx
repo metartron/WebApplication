@@ -36,49 +36,49 @@
             <table id="tbMember" >
                 <caption>會員資料</caption>
                 <tr>
-                    <td >帳號:</td>
+                    <td >帳號：</td>
                     <td >
             <asp:TextBox ID="txtAccount" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td  >密碼:</td>
+                    <td  >密碼：</td>
                     <td >
             <asp:TextBox ID="txtPwd" runat="server" TextMode="Password" placeholder="8-12碼"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td  >密碼確認:</td>
+                    <td  >密碼確認：</td>
                     <td >
             <asp:TextBox ID="txtPwd2" runat="server" TextMode="Password" placeholder="請再輸入一次密碼"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td  >身分證字號:</td>
+                    <td  >身分證字號：</td>
                     <td >
                         <asp:TextBox ID="txtID" runat="server" placeholder="A123456789"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td >姓名:</td>
+                    <td >姓名：</td>
                     <td >
                         <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td >生日:</td>
+                    <td >生日：</td>
                     <td >
                         <asp:TextBox ID="txtBirthday" runat="server" placeholder="1990-01-01"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td >E-mail:</td>
+                    <td >E-mail：</td>
                     <td >
                         <asp:TextBox ID="txtEmail" runat="server"  placeholder="ex:abc@abc.com"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td >性別:</td>
+                    <td >性別：</td>
                     <td >
           
                         <asp:RadioButtonList ID="rblGender" runat="server" RepeatDirection="Horizontal">
@@ -88,7 +88,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td >學歷:</td>
+                    <td >學歷：</td>
                     <td  >
             <asp:DropDownList ID="ddlEduLevel" runat="server">
                             <asp:ListItem Text="請選擇"></asp:ListItem>
@@ -103,7 +103,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td >興趣:</td>
+                    <td >興趣：</td>
                     <td  >
                         <table >
                             <tr>
