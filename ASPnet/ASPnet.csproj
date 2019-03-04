@@ -82,6 +82,7 @@
     <Content Include="15WebForm_Validation.aspx" />
     <Content Include="16DB_Connection.aspx" />
     <Content Include="17GridView_DataSource.aspx" />
+    <Content Include="18GridView_Paging.aspx" />
     <Content Include="poker_img\1.gif" />
     <Content Include="poker_img\10.gif" />
     <Content Include="poker_img\11.gif" />
@@ -234,6 +235,13 @@
     </Compile>
     <Compile Include="17GridView_DataSource.aspx.designer.cs">
       <DependentUpon>17GridView_DataSource.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="18GridView_Paging.aspx.cs">
+      <DependentUpon>18GridView_Paging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="18GridView_Paging.aspx.designer.cs">
+      <DependentUpon>18GridView_Paging.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

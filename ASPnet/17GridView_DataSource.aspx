@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Account" DataSourceID="SqlDataSource1">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Account" DataSourceID="SqlDataSource1" AllowSorting="True">
                 <Columns>
                     <asp:BoundField DataField="Account" HeaderText="Account" ReadOnly="True" SortExpression="Account" />
                     <asp:BoundField DataField="Pswd" HeaderText="Pswd" SortExpression="Pswd" />
@@ -22,15 +22,15 @@
                     <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
                 </Columns>
             </asp:GridView>
-            <asp:GridView ID="GridView2" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False">
+            <asp:GridView ID="GridView2" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" OnRowDataBound="GridView2_RowDataBound" AllowSorting="True">
                 <Columns>
-                    <asp:BoundField DataField="Name" HeaderText="姓名" DataFormatString="<{0}>"/>
-                    <asp:BoundField DataField="Birthday" HeaderText="生日" DataFormatString="{0:D}" />
-                    <asp:BoundField DataField="Email" HeaderText="Email"  />
+                    <asp:BoundField DataField="Name" HeaderText="姓名" DataFormatString="<{0}>" SortExpression="Name"/>
+                    <asp:BoundField DataField="Birthday" HeaderText="生日" DataFormatString="{0:D}" SortExpression="Birthday"/>
+                    <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                     <asp:BoundField DataField="Gender" HeaderText="Gender" />
-                    <asp:BoundField DataField="EduLevel" HeaderText="EduLevel"  />
+                    <asp:BoundField DataField="EduLevel" HeaderText="EduLevel" SortExpression="EduLevel" />
                     <asp:BoundField DataField="Notes" HeaderText="Notes" Visible="false" />
-                    <asp:BoundField DataField="Account" HeaderText="Account" ReadOnly="True" />
+                    <asp:BoundField DataField="Account" HeaderText="Account" ReadOnly="True" SortExpression="Account" />
                     <asp:BoundField DataField="Pswd" HeaderText="Pswd" DataFormatString="*****" />
                 </Columns>
             </asp:GridView>
