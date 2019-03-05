@@ -13,5 +13,47 @@ namespace Homework
         {
 
         }
+
+        protected void btnAll_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < ltbInterest.Items.Count; i++)
+            {
+                ltbInterestFinal.Items.Add(ltbInterest.Items[i].Text);
+            }
+            ltbInterest.Items.Clear();
+        }
+
+        protected void btnYes_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < ltbInterest.Items.Count; i++)
+            {
+                if (ltbInterest.Items[i].Selected)
+                {
+                    ltbInterestFinal.Items.Add(ltbInterest.Items[i].Text);
+                    ltbInterest.Items.RemoveAt(i);
+                }
+            }
+        }
+
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < ltbInterestFinal.Items.Count; i++)
+            {
+                if (ltbInterestFinal.Items[i].Selected)
+                {
+                    ltbInterest.Items.Add(ltbInterestFinal.Items[i].Text);
+                    ltbInterestFinal.Items.RemoveAt(i);
+                }
+            }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < ltbInterestFinal.Items.Count; i++)
+            {
+                ltbInterest.Items.Add(ltbInterestFinal.Items[i].Text);
+            }
+            ltbInterestFinal.Items.Clear();
+        }
     }
 }

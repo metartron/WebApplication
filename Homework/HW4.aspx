@@ -123,7 +123,7 @@
                                 </td>
                                 <td > 
 
-                        <asp:Button ID="btnAll" runat="server" Text=">>"  CausesValidation="False" />
+                        <asp:Button ID="btnAll" runat="server" Text=">>"  CausesValidation="False" OnClick="btnAll_Click" />
                                 </td>
                                 <td rowspan="4"> 
                         <asp:ListBox ID="ltbInterestFinal" runat="server" Width="100" Height="150">
@@ -135,17 +135,17 @@
                             </tr>
                             <tr>
                                 <td> 
-                        <asp:Button ID="btnYes" runat="server" Text=">"  CausesValidation="False" />
+                        <asp:Button ID="btnYes" runat="server" Text=">"  CausesValidation="False" OnClick="btnYes_Click" />
                             </td>
                                 </tr>
                             <tr>
                                 <td> 
-                        <asp:Button ID="btnNo" runat="server" Text="<"   CausesValidation="False" />
+                        <asp:Button ID="btnNo" runat="server" Text="<"   CausesValidation="False" OnClick="btnNo_Click" />
                                 </td>
                             </tr>
                             <tr>
                                 <td > 
-                        <asp:Button ID="btnCancel" runat="server" Text="<<"   CausesValidation="False" />
+                        <asp:Button ID="btnCancel" runat="server" Text="<<"   CausesValidation="False" OnClick="btnCancel_Click" />
                                 </td>
                             </tr>
                           
