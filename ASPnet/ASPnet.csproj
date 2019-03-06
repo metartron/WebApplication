@@ -83,6 +83,7 @@
     <Content Include="16DB_Connection.aspx" />
     <Content Include="17GridView_DataSource.aspx" />
     <Content Include="18GridView_Paging.aspx" />
+    <Content Include="19GridView_Paging2.aspx" />
     <Content Include="poker_img\1.gif" />
     <Content Include="poker_img\10.gif" />
     <Content Include="poker_img\11.gif" />
@@ -242,6 +243,13 @@
     </Compile>
     <Compile Include="18GridView_Paging.aspx.designer.cs">
       <DependentUpon>18GridView_Paging.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="19GridView_Paging2.aspx.cs">
+      <DependentUpon>19GridView_Paging2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="19GridView_Paging2.aspx.designer.cs">
+      <DependentUpon>19GridView_Paging2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

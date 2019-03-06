@@ -4,32 +4,54 @@
     <meta charset="utf-8" />
     <title></title>
     <style>
-        #FunBtn>span {
-            border: 2px solid;
-            box-shadow: 3px 3px 3px black;
-            cursor: pointer;
-            font-family:Webdings;
-            font-size:24pt;
-        }
         #ControlPanel {
             width: 600px;
             margin: auto;
-            border: 5px solid;
+            border: 5px solid
         }
+
+        #FuncBtn > span {
+            border: 2px solid;
+            box-shadow: 3px 3px 3px black;
+            cursor: pointer;
+            font-family: Webdings;
+            font-size: 24pt;
+        }
+
         #volValue {
             width: 25px;
             background-color: black;
             color: yellow;
             text-align: center;
         }
+
         #settime {
             background-color: #808080;
-            height: 20px;
+            height: 10px;
+            cursor: pointer;
         }
+
         #progress {
-            background-color: red;
-            height: 20px;
-            width:0;
+            background-color: #ff6a00;
+            height: 10px;
+            width: 0;
+        }
+        #Sbook,#Tbook{
+            width:294px;
+            border:solid;
+            float:left;
+            height:165px;
+            overflow:auto;
+            cursor:copy;
+        }
+        #btnUpdateMusic {
+            border: 2px solid;
+            text-align: center;
+            font-size: 18pt;
+            cursor: pointer;
+            background-color: pink;
+            clear: both;
+            
         }
     </style>
 </head>
@@ -37,301 +59,405 @@
 
     <audio id="audio">
         <!--controls="controls"-->
-        <source id="song" src="mp3/halflife.mp3" type="audio/mpeg" />
+        <!--<source id="song" src="mp3/halflife.mp3" type="audio/mpeg" title="一半人生 五月天" />-->
+        <source id="song" type="audio/mpeg" />
     </audio>
     <div id="ControlPanel">
 
         <select id="music">
-            <option value="mp3/halflife.mp3">一半人生 五月天</option>
-            <option value="mp3/brave.mp3">終於勇敢了</option>
-            <option value="mp3/joker.mp3">肆無忌憚</option>
-            <option value="mp3/halflife.mp3">4444444</option>
-            <option value="mp3/brave.mp3">5555555</option>
-            <option value="mp3/joker.mp3">66666666</option>
+            
         </select>
 
-        <div id="FunBtn">
+        <div id="FuncBtn">
             <span id="play">4</span>
             <!--<span id="pause">;</span>-->
             <span id="stop"><</span>
-            <span id="prevsong">9</span> <!--上一首-->
-            <span id="prevtime">7</span> <!--倒轉-->
-            <span id="nexttime">8</span> <!--快轉-->
-            <span id="nextsong">:</span> <!--下一首-->
-            <span id="muted">V</span><!--靜音-->
-            <span id="loop">q</span><!--單曲循環-->
-            <span id="random">s</span><!--隨機循環-->
-            <span id="allloop">`</span><!--全曲循環-->
+            <span id="prevsong">9</span>
+            <span id="prevtime">7</span>
+            <span id="nexttime">8</span>
+            <span id="nextsong">:</span>
+            <span id="muted">V</span>
+            <span id="loop">q</span>
+            <span id="random">s</span>
+            <span id="allloop">`</span>
+            <span id="songbook">@</span>
+
         </div>
         <div id="volume">
-            <!--音量控制-->
-            <input id="vol" type="range" min="0" max="100" value="80" />
+            <input id="vol" type="range" min="0" max="100" value="10" />
             <input id="volM" type="button" value="-" />
             <input id="volP" type="button" value="+" />
-            <input id="volValue" type="text"  readonly="readonly" />
+            <input id="volValue" type="text" readonly="readonly" />
         </div>
         <div id="settime">
             <div id="progress"></div>
         </div>
+
         <div id="InfoPanel">
             <div id="duration">00:00 / 00:00</div>
-            <marquee id="info">Pleace clcik play button</marquee>
+            <marquee id="info">請按播放鈕~~~~~</marquee>
             <div id="info2"></div>
+        </div>
+        <hr />
+        <!--歌本-->
+        <div id="Sbook"  >
+            <div title="mp3/halflife.mp3"  >一半人生 五月天</div>
+            <div title="mp3/brave.mp3"  >終於勇敢了</div>
+            <div title="mp3/joker.mp3"  >肆無忌憚</div>
+            <div title="mp3/halflife.mp3"  >一半人生 五月天 1</div>
+            <div title="mp3/brave.mp3" >終於勇敢了 1</div>
+            <div title="mp3/joker.mp3"  >肆無忌憚 1</div>
+            <div title="mp3/halflife.mp3"  >一半人生 五月天 2</div>
+            <div title="mp3/brave.mp3">終於勇敢了 2</div>
+            <div title="mp3/joker.mp3"  >肆無忌憚 2</div>
+            <div title="mp3/halflife.mp3"  >一半人生 五月天 3</div>
+            <div title="mp3/brave.mp3"  >終於勇敢了 3</div>
+            <div title="mp3/joker.mp3" >肆無忌憚 3</div>
+        </div>
+        <div id="Tbook" >
+
+        </div>
+        <div id="btnUpdateMusic">
+            更新歌單
         </div>
     </div>
 
-        <script>
-            //宣告物件
-            var audio = document.getElementById("audio");
-            var song = document.getElementById("song");
+    <script>
+        var audio = document.getElementById("audio");
+        var play = document.getElementById("play");
+        //var pause = document.getElementById("pause");
+        var stop = document.getElementById("stop");
+        var info = document.getElementById("info");
+        var music = document.getElementById("music");
+        var song = document.getElementById("song");
+        var prevtime = document.getElementById("prevtime");
+        var nexttime = document.getElementById("nexttime");
+        var prevsong = document.getElementById("prevsong");
+        var nextsong = document.getElementById("nextsong");
 
-            var play = document.getElementById("play");
-            //var pause = document.getElementById("pause");
-            var stop = document.getElementById("stop");
-            var prevtime = document.getElementById("prevtime");
-            var nexttime = document.getElementById("nexttime");
-            var prevsong = document.getElementById("prevsong");
-            var nextsong = document.getElementById("nextsong");
-            var muted = document.getElementById("muted");
-            var loop = document.getElementById("loop");
-            var random = document.getElementById("random");
-            var allloop = document.getElementById("allloop");
+        var vol = document.getElementById("vol");
+        var volM = document.getElementById("volM");
+        var volP = document.getElementById("volP");
+        var volValue = document.getElementById("volValue");
+        var muted = document.getElementById("muted");
+        var loop = document.getElementById("loop");
+        var random = document.getElementById("random");
+        var allloop = document.getElementById("allloop");
 
-            var info = document.getElementById("info");
-            var info2 = document.getElementById("info2");
-            var duration = document.getElementById("duration");
+        var info2 = document.getElementById("info2");
+        var duration = document.getElementById("duration");
+        var settime = document.getElementById("settime");
 
-            var music = document.getElementById("music");
+        var Sbook = document.getElementById("Sbook");
+        var Tbook = document.getElementById("Tbook");
+        var btnUpdateMusic = document.getElementById("btnUpdateMusic");
 
-            var vol = document.getElementById("vol");
-            var volM = document.getElementById("volM");
-            var volP = document.getElementById("volP");
-            var volValue = document.getElementById("volValue");
 
-            var progress = document.getElementById("progress");
-            var settime = document.getElementById("settime");
-            var ControlPanel = document.getElementById("ControlPanel");
+        play.addEventListener("click", PlayMusic);
+        //pause.addEventListener("click", PauseMusic);
+        stop.addEventListener("click", StopMusic);
+        music.addEventListener("change", function () { ChangeMusic(music.selectedIndex); });
+        prevtime.addEventListener("click", function () { TimeChange(false); });
+        nexttime.addEventListener("click", function () { TimeChange(true); });
+        prevsong.addEventListener("click", function () { SongChange("p"); });
+        nextsong.addEventListener("click", function () { SongChange("n"); });
+        vol.addEventListener(BrowserTest(), function () { VolumeChange("c"); });
+        volM.addEventListener("click", function () { VolumeChange("m"); });
+        volP.addEventListener("click", function () { VolumeChange("p"); });
+        muted.addEventListener("click", SetMuted);
+        loop.addEventListener("click", loopSong);
+        random.addEventListener("click", randomSong);
+        allloop.addEventListener("click", allloopSong);
+        settime.addEventListener("click", function () { setTimeUseBar(event); });
 
-            //物件上面加個click事件
-            play.addEventListener("click", PlayMusic);
-            //pause.addEventListener("click", PauseMusic);
-            stop.addEventListener("click", StopMusic);
-            music.addEventListener("change", function () { ChangeMusic(music.selectedIndex); });
-            prevtime.addEventListener("click", function () { TimeChange(false); });
-            nexttime.addEventListener("click", function () { TimeChange(true); });
-            prevsong.addEventListener("click", function () { SongChange("p"); });
-            nextsong.addEventListener("click", function () { SongChange("n"); });
-            muted.addEventListener("click", SetMuted);
-            loop.addEventListener("click", loopSong);
-            random.addEventListener("click", randomSong);
-            allloop.addEventListener("click", allloopSong);
-            settime.addEventListener("click", function () { setTimeUseBar(event); });
+        Sbook.addEventListener("dragstart", function () { drag(event); });
+        Tbook.addEventListener("dragover", function () { allowDrop(event); });
+        Tbook.addEventListener("drop", function () { drop(event); });
 
-            vol.addEventListener("change", function () { VolumeChange("c"); }); //IE使用change事件;其他瀏覽器使用input事件
-            volM.addEventListener("click", function () { VolumeChange("m"); });
-            volP.addEventListener("click", function () { VolumeChange("p"); });
+        Tbook.addEventListener("dragstart", function () { drag(event); });
+        Sbook.addEventListener("dragover", function () { allowDrop(event); });
+        Sbook.addEventListener("drop", function () { drop(event); });
 
-            //事件操作
-            VolumeChange("c");
+        btnUpdateMusic.addEventListener("click", UpdateMusic);
 
-            function setTimeUseBar(evt) {
-                audio.currentTime = audio.duration * (evt.offsetX / ControlPanel.clientWidth);
+        VolumeChange("c"); //設定初始音量
+        getDefaultSong();//設定初始歌單
+
+        //瀏覽器偵測↓↓↓↓↓↓↓↓↓↓↓↓↓
+        function BrowserTest() {
+            if (navigator.userAgent.search("Chrome") != -1) {
+                return "input";
+            }
+            else if (navigator.userAgent.search("Opera") != -1) {
+                return "input";
+            }
+            else if (navigator.userAgent.search("Firefox") != -1) {
+                return "input";
+            }
+            else {
+                return "change";
+            }
+        }
+        //瀏覽器偵測↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+        //更新歌單
+        function UpdateMusic() {
+            //清掉所有歌
+            for (i = music.children.length-1; i >=0; i--) {
+                music.removeChild(music.children[i]);
             }
 
-            function getDuration() {
-                var durationTime = getTimeFormat(audio.duration);
-                var currentTime = getTimeFormat(audio.currentTime);
-                duration.innerText = currentTime + " / " + durationTime;
+            for (i = 0; i < Tbook.children.length; i++) {
+                var option = document.createElement("option");
+                var Snode = Tbook.children[i];
+                option.value = Snode.title;
+                option.innerText = Snode.innerText;
+                music.appendChild(option);
+            }
+        }
 
-                progress.style.width = Math.floor(audio.currentTime / audio.duration *100)+"%";
+        //Drag and Drop↓↓↓↓↓↓↓↓↓↓↓↓↓
+        //抓預設歌曲
+        function getDefaultSong() {
+            for (i = 0; i < Sbook.children.length; i++) {
+                var option = document.createElement("option");
+                var Snode = Sbook.children[i];
 
-                setTimeout(getDuration, 1000);
+                option.value = Snode.title;
+                option.innerText = Snode.innerText;
+                music.appendChild(option);
 
-                if (durationTime == currentTime) {
-                    if (info2.innerText == "單曲循環") {
-                        SongChange("s");
-                    }
-                    else if (info2.innerText == "隨機播放") {
-                        SongChange("r");
-                    }
-                    else if (music.selectedIndex == music.options.length - 1) {
-                        if (info2.innerText == "全曲循環") {
-                            SongChange("a");
-                        }
-                        else {
-                            StopMusic();
-                        }
+                Snode.draggable = true;
+                Snode.id = "song" + (i + 1);
+            }
+        }
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(evt) {
+            evt.dataTransfer.setData("text", evt.target.id);
+            //alert(evt.target.id);
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+        //Drag and Drop↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+
+        function setTimeUseBar(evt) {
+            //console.log(ControlPanel.style.width);
+            audio.currentTime = audio.duration * (evt.offsetX / 600);
+            //console.log(ControlPanel.style.width);
+        }
+
+
+        function getDuration() {
+            var durationTime = getTimeFormat(audio.duration);
+            var currentTime = getTimeFormat(audio.currentTime);
+            duration.innerText = currentTime + " / " + durationTime;
+
+            progress.style.width = Math.floor(audio.currentTime/audio.duration  * 100) + "%";
+            //console.log(progress.style.width);
+            setTimeout(getDuration, 1000);
+
+            if (durationTime == currentTime) {
+                if (info2.innerText == "單曲循環") {
+                    SongChange("s");
+                }
+                else if (info2.innerText == "隨機播放") {
+                    SongChange("r");
+                }
+                else if (music.selectedIndex == music.options.length - 1) {
+                    if (info2.innerText == "全曲循環") {
+                        SongChange("a");
+                        
                     }
                     else {
-                        SongChange("c");
+                        StopMusic();
                     }
-
-                }
-
-            }
-
-            function getTimeFormat(TimeSec) {
-                var min = Math.floor(TimeSec / 60);
-                var sec = Math.floor(TimeSec) - min * 60;
-                min = min < 10 ? "0" + min : min;
-                sec = sec < 10 ? "0" + sec : sec;
-                return min + ":" + sec;
-            }
-            //全曲循環
-            function allloopSong() {
-                if (info2.innerText == "全曲循環") {
-                    info2.innerText = "";
                 }
                 else {
-                    info2.innerText = "全曲循環";
+                    SongChange("c");
+                
                 }
+
             }
 
-            //隨機播放
-            function randomSong() {
-                if (info2.innerText == "隨機播放") {
-                    info2.innerText = "";
-                }
-                else {
-                    info2.innerText = "隨機播放";
-                }
-            }
+        }
 
-            //單曲循環
-            function loopSong() {
-                if (info2.innerText == "單曲循環") {
-                    info2.innerText = "";
-                }
-                else {
-                    info2.innerText = "單曲循環";
-                }
-            }
 
+        function getTimeFormat(TimeSec) {
+            var min = Math.floor(TimeSec / 60);
+            var sec = Math.floor(TimeSec) - min * 60;
+            min = min < 10 ? "0" + min : min;
+            sec = sec < 10 ? "0" + sec : sec;
+            return min + ":" + sec;
+        }
+
+        //全曲循環
+        function allloopSong() {
+            if (info2.innerText == "全曲循環") {
+                info2.innerText = "";
+            }
+            else {
+                info2.innerText = "全曲循環";
+            }
+        }
+
+        //隨機播放
+        function randomSong() {
+            if (info2.innerText == "隨機播放") {
+                info2.innerText = "";
+            }
+            else {
+                info2.innerText = "隨機播放";
+            }
+        }
+
+        //單曲循環
+        function loopSong() {
+            if (info2.innerText == "單曲循環") {
+                info2.innerText = "";
+            }
+            else {
+                info2.innerText = "單曲循環";
+            }
+        }
+
+
+
+        function SetMuted() {
+            if (muted.innerText == "V") {
+                audio.muted = true;
+                muted.innerText = "U";
+            }
+            else {
+                audio.muted = false;
+                muted.innerText = "V";
+            }
+        }
+
+        function VolumeChange(sound) {
+            switch (sound) {
+                case "m":
+                    vol.value--;
+                    break;
+                case "p":
+                    vol.value++;
+                    break;
+
+            }
+            volValue.value = vol.value;
+
+            audio.volume = volValue.value/100;
+        }
+
+        function SongChange(strFlag) {
+            var index = music.selectedIndex;
+            var length = music.options.length;
             
-            function SetMuted() {
-                if (muted.innerText == "V") {
-                    audio.muted = true;
-                    muted.innerText = "U";
-                }
-                else {
-                    audio.muted = false;
-                    muted.innerText = "V";
-                }
-            }
-
-            function VolumeChange(sound) {
-                switch (sound) {
-                    case "c":
-                        break;
-                    case "m":
-                        vol.value--;
-                        break;
-                    case "p":
-                        vol.value++;
-                        break;
-                }
-                volValue.value = vol.value;
-
-                audio.volume = volValue.value / 100;
-            }
-
-            function TimeChange(boolFlag) {
-                if (boolFlag)
-                    audio.currentTime += 10;
-                else
-                    audio.currentTime -= 10;
-            }
-            function SongChange(strFlag) {
-                var index = music.selectedIndex;
-                var length = music.options.length;
-
-                switch (strFlag){
-                    case "n"://下一首
-                        if (index < length - 1) {
-                            index++;
-                        }
-                        else {
-                            index = 0;
-                        }
-                        break;
-                    case "p"://上一首
-                        if (index == 0)
-                            index = length - 1;
-                        else
-                            index--;
-                        break;
-                    case "s"://單曲循環
-                        audio.currentTime = 0;
-                        
-                        break;
-                    case "r"://隨機播放
-                        index = Math.floor(Math.random() * length);
-                        break;
-                    case "a"://全曲循環
-                        index = 0;
-                        break;
-                    default:
+            switch (strFlag) {
+                case "n":
+                    if (index < length - 1)
                         index++;
-                        break;
-                }
-                //song.src = music.options[index].value;
-                //music.options[index].selected = true;
-                //audio.load();
-                //audio.play();
+                    else
+                        index = 0;
+                    break;
+                case "p":
+                    if (index == 0)
+                        index = length- 1;
+                    else
+                        index--;
+                    break;
+                case "s":
+                    audio.currentTime = 0;
+                    break;
+                case "r":
+                    index = Math.floor(Math.random() * length);
+                    break;
+                case "a":
+                    index = 0;
+                    break;
+                default:
+                    index++;
+                    break;
 
-                ChangeMusic(index);
             }
- 
-            function PlayMusic() {
-                audio.play();
-                getDuration();
-                ShowStatus(1);
-                if (play.innerText == "4")
-                    play.innerText = ";";
-                else {
-                    play.innerText = "4";
-                    PauseMusic();
-                }
-            }
-            function PauseMusic() {
-                audio.pause();
-                ShowStatus(2);
-            }
-            function StopMusic() {
-                audio.pause();
-                audio.load();
+
+            //song.src = music.options[index].value;
+            //music.options[index].selected = true;
+
+            ChangeMusic(index);
+        }
+
+        function TimeChange(boolFlag) {
+            if (boolFlag)
+                audio.currentTime += 10;
+            else
+                audio.currentTime -= 10;
+        }
+
+
+        function PlayMusic() {
+            audio.play();
+            getDuration();
+            ShowStatus(1);
+            if (play.innerText == "4")
+                play.innerText = ";";
+            else {
                 play.innerText = "4";
-                ShowStatus(3);
+                PauseMusic();
             }
+        }
+        function PauseMusic() {
+            audio.pause();
+            ShowStatus(2);
+        }
+      
 
-            function ChangeMusic(index) {
+        function StopMusic() {
+            audio.pause();
+            audio.load();
+            play.innerText = "4";
+            ShowStatus(3);
+           
+        }
+       
 
-                //song.src = music.options[music.selectedIndex].value;
-                song.src = music.options[index].value;
-                music.options[index].selected = true;
-                audio.load();
-                if (info.innerText == "音樂播放中") {
-                    //PlayMusic();
-                    audio.play();
-                }
-            }
+        function ChangeMusic(index) {
+            song.src = music.options[index].value;
+            song.title = music.options[index].innerText;
+            //console.log("test1:" + song.title);
+            music.options[index].selected = true;
+            audio.load();
             
-            function ShowStatus(status) {
-                var strStatus = "";
-                switch (status) {
-                    case 1:
-                        strStatus = "音樂播放中";
-                        break;
-                    case 2:
-                        strStatus = "音樂暫停";
-                        break;
-                    case 3:
-                        strStatus = "音樂停止";
-                        break;
-                }
-                info.innerText = strStatus;
+            if (play.innerText == ";") {
+                audio.play();
+                ShowStatus(1);
+            }
+                //PlayMusic();
+        }
+
+        function ShowStatus(status) {
+            var strStatus = "";
+            //song.title = music.options[music.selectedIndex].innerText; //自己加的
+            //console.log("test2:"+song.title);
+            switch (status) {
+                case 1:
+                    strStatus = "現正播放：" + song.title;
+                    break;
+                case 2:
+                    strStatus = "音樂暫停";
+                    break;
+                case 3:
+                    strStatus = "音樂停止";
+                    break;
             }
 
-        </script>
+            info.innerText = strStatus;
+        }
+    </script>
 </body>
 </html>
