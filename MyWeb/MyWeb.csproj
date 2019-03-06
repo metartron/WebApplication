@@ -108,6 +108,8 @@
     <Content Include="mp3\halflife.mp3" />
     <Content Include="mp3\Joker.mp3" />
     <Content Include="mp3\brave.mp3" />
+    <Content Include="Player.js" />
+    <Content Include="PlayerStyle.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
