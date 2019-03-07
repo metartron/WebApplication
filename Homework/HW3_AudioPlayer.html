@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="css/Player.css">
+</head>
+<body>
+    <div class="music-box">
+        <div class="img-filter"></div>
+        <div class="layer-ct"></div>
+        <img src="./img/lazyload@2x.gif" class="picture" id="picture">
+        <div class="music-content">
+            <i class="music-icon lyric-like-share lyric" data-type="0">&#xe629;</i>
+            <i class="music-icon lyric-like-share like" data-type="0">&#xe601;</i>
+            <i class="music-icon lyric-like-share share">&#xe624;</i>
+            <div class="album-box"></div>
+            <div class="lyric-box"></div>
+            <div class="player-box">
+                <div class="progress">
+                    <div class="progress-line">
+                        <s class="progress-handle"></s>
+                    </div>
+                </div>
+                <span class="time current-time">0:00</span>
+                <i class="music-icon play-btn">&#xe6ee;</i>
+                <i class="music-icon p-n-btn next">&#xe718;</i>
+                <i class="music-icon p-n-btn out-type" data-type="0">&#xe67c;</i>
+                <i class="music-icon vol">&#xe63d;</i>
+                <div class="volume-bar">
+                    <span class="volume-line">
+                        <span class="volume-handle"></span>
+                    </span>
+                </div>
+                <span class="time duration-time">0:00</span>
+            </div>
+        </div>
+    </div>
+    <!--<p class="by"><a href="https://github.com/boloog/music/" target="_blank">云音乐-播放器 源码</a> by 龙柏龙</p>
+    <audio src="" id="audio">您的浏览器不支持 audio 标签。</audio>-->
+    <script src="js/Player.js"></script>
+</body>
+</html>

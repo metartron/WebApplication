@@ -69,10 +69,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="16Homework4.aspx" />
+    <Content Include="css\Player.css" />
     <Content Include="HW1.aspx" />
     <Content Include="HW2.aspx" />
     <Content Include="HW3.aspx" />
+    <Content Include="HW3_AudioPlayer.html" />
     <Content Include="HW4.aspx" />
+    <Content Include="HW5.aspx" />
+    <Content Include="js\Player.js" />
     <Content Include="poker_img\1.gif" />
     <Content Include="poker_img\10.gif" />
     <Content Include="poker_img\11.gif" />
@@ -163,6 +167,13 @@
     <Compile Include="HW4.aspx.designer.cs">
       <DependentUpon>HW4.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HW5.aspx.cs">
+      <DependentUpon>HW5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HW5.aspx.designer.cs">
+      <DependentUpon>HW5.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +184,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="fonts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
