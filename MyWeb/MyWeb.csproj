@@ -90,6 +90,7 @@
     <Content Include="20Password.html" />
     <Content Include="21JSAudio.html" />
     <Content Include="Chrysanthemum.jpg" />
+    <Content Include="font\WEBDINGS.svg" />
     <Content Include="images2\Desert.jpg" />
     <Content Include="Hydrangeas.jpg" />
     <Content Include="hyperlink\01Heading.html" />
@@ -116,6 +117,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="font\WEBDINGS.TTF" />
+    <Content Include="font\WEBDINGS.eot" />
+    <Content Include="font\WEBDINGS.woff" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,5 +1,22 @@
 ﻿body {
 }
+@font-face {
+    font-family: "Webdings_me";
+    src: url("font/WEBDINGS.ttf") format('truetype'); 
+}
+@font-face {
+    font-family: "Webdings_me";
+    src: url("font/WEBDINGS.svg") format('svg');
+}
+@font-face {
+    font-family: "Webdings_me";
+    src: url("font/WEBDINGS.eot") format('opentype');
+}
+@font-face {
+    font-family: "Webdings_me";
+    src: url("font/WEBDINGS.woff") format('woff');
+}
+
 #ControlPanel {
     
     margin: auto;
@@ -10,7 +27,7 @@
     border: 2px solid;
     box-shadow: 3px 3px 3px black;
     cursor: pointer;
-    font-family: Webdings;
+    font-family: Webdings_me;
     font-size: 24pt;
 }
 
