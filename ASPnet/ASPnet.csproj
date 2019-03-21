@@ -84,6 +84,12 @@
     <Content Include="17GridView_DataSource.aspx" />
     <Content Include="18GridView_Paging.aspx" />
     <Content Include="19GridView_Paging2.aspx" />
+    <Content Include="20GridView_Search.aspx" />
+    <Content Include="21GridView_BoundField.aspx" />
+    <Content Include="22GridView_ButtonField.aspx" />
+    <Content Include="23GridView_HyperLinkField2.aspx" />
+    <Content Include="23GridView_HyperLinkField.aspx" />
+    <Content Include="24CommandField.aspx" />
     <Content Include="poker_img\1.gif" />
     <Content Include="poker_img\10.gif" />
     <Content Include="poker_img\11.gif" />
@@ -136,6 +142,24 @@
     <Content Include="poker_img\7.gif" />
     <Content Include="poker_img\8.gif" />
     <Content Include="poker_img\9.gif" />
+    <Content Include="ProductsImg\P001.jpg" />
+    <Content Include="ProductsImg\P002.jpg" />
+    <Content Include="ProductsImg\P003.jpg" />
+    <Content Include="ProductsImg\P004.jpg" />
+    <Content Include="ProductsImg\P005.jpg" />
+    <Content Include="ProductsImg\P006.jpg" />
+    <Content Include="ProductsImg\P008.jpg" />
+    <Content Include="ProductsImg\P009.jpg" />
+    <Content Include="ProductsImg\P010.jpg" />
+    <Content Include="ProductsImg\sP001.jpg" />
+    <Content Include="ProductsImg\sP002.jpg" />
+    <Content Include="ProductsImg\sP003.jpg" />
+    <Content Include="ProductsImg\sP004.jpg" />
+    <Content Include="ProductsImg\sP005.jpg" />
+    <Content Include="ProductsImg\sP006.jpg" />
+    <Content Include="ProductsImg\sP008.jpg" />
+    <Content Include="ProductsImg\sP009.jpg" />
+    <Content Include="ProductsImg\sP010.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -250,6 +274,48 @@
     </Compile>
     <Compile Include="19GridView_Paging2.aspx.designer.cs">
       <DependentUpon>19GridView_Paging2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="20GridView_Search.aspx.cs">
+      <DependentUpon>20GridView_Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="20GridView_Search.aspx.designer.cs">
+      <DependentUpon>20GridView_Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="21GridView_BoundField.aspx.cs">
+      <DependentUpon>21GridView_BoundField.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="21GridView_BoundField.aspx.designer.cs">
+      <DependentUpon>21GridView_BoundField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="22GridView_ButtonField.aspx.cs">
+      <DependentUpon>22GridView_ButtonField.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="22GridView_ButtonField.aspx.designer.cs">
+      <DependentUpon>22GridView_ButtonField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="23GridView_HyperLinkField2.aspx.cs">
+      <DependentUpon>23GridView_HyperLinkField2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="23GridView_HyperLinkField2.aspx.designer.cs">
+      <DependentUpon>23GridView_HyperLinkField2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="23GridView_HyperLinkField.aspx.cs">
+      <DependentUpon>23GridView_HyperLinkField.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="23GridView_HyperLinkField.aspx.designer.cs">
+      <DependentUpon>23GridView_HyperLinkField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="24CommandField.aspx.cs">
+      <DependentUpon>24CommandField.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="24CommandField.aspx.designer.cs">
+      <DependentUpon>24CommandField.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
