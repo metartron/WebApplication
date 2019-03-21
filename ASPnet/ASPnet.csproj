@@ -90,6 +90,12 @@
     <Content Include="23GridView_HyperLinkField2.aspx" />
     <Content Include="23GridView_HyperLinkField.aspx" />
     <Content Include="24CommandField.aspx" />
+    <Content Include="25DataList-ItemTemplate.aspx" />
+    <Content Include="26DataList-SelectItemTemplate.aspx" />
+    <Content Include="27DataList-Edit.aspx" />
+    <Content Include="images\bottom.jpg" />
+    <Content Include="images\left.jpg" />
+    <Content Include="images\top.jpg" />
     <Content Include="poker_img\1.gif" />
     <Content Include="poker_img\10.gif" />
     <Content Include="poker_img\11.gif" />
@@ -316,6 +322,27 @@
     </Compile>
     <Compile Include="24CommandField.aspx.designer.cs">
       <DependentUpon>24CommandField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="25DataList-ItemTemplate.aspx.cs">
+      <DependentUpon>25DataList-ItemTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="25DataList-ItemTemplate.aspx.designer.cs">
+      <DependentUpon>25DataList-ItemTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="26DataList-SelectItemTemplate.aspx.cs">
+      <DependentUpon>26DataList-SelectItemTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="26DataList-SelectItemTemplate.aspx.designer.cs">
+      <DependentUpon>26DataList-SelectItemTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="27DataList-Edit.aspx.cs">
+      <DependentUpon>27DataList-Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="27DataList-Edit.aspx.designer.cs">
+      <DependentUpon>27DataList-Edit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
