@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .line {
+            border: 1px solid;
+        }
+        .red {
+            background-color: red;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>ddd</li>
+        <li>eee</li>
+    </ul>
+
+    <ol id="list2">
+        <li>
+            aaa
+            <ul id="list3">
+                <li>aaa</li>
+                <li>bbb</li>
+                <li>ccc</li>
+                <li>ddd</li>
+                <li>eee</li>
+            </ul>
+        </li>
+        <li>bbb
+            <ul id="list4">
+                <li>aaa</li>
+                <li>bbb</li>
+                <li>ccc</li>
+                <li>ddd</li>
+                <li>eee</li>
+        </li>
+        <li>ccc</li>
+        <li>ddd</li>
+        <li>eee</li>
+    </ol>
+
+
+
+    
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+
+    <!--使用jQuery的script必須寫在引用jquery之後-->
+    <script>
+        //$('#list').addClass('yellow');
+        //$('#list').addClass('line');
+        //$('#list').addClass('red');
+        ///以上是combine兩種css , 相同屬性則看最上面css的順序,不是按照addClass的順序
+        //$('#list').addClass('red').addClass('line').addClass('yellow');
+        //相同物件套用可以寫在一起
+        //$('#list2 li').addClass('yellow');
+        //$('#list2 li:first-child').addClass('line');
+
+        //$('#list2 li>li:first-child').addClass('line');
+        ///////jQuery////////////////////////////////////////
+        //$('#list>li').addClass('red').addClass('line');
+        //$('#list>li:nth-child(2n+1)').addClass('yellow');
+
+        //$('#list2>li:first-child').addClass('line')
+        //元素選擇器:$('#XXXXX')
+        //id選擇器:$('#ID名稱')
+        //類別選擇器:$('.類別名稱')
+        //屬性選擇器:$('[屬性=屬性名稱]')
+        //階層選擇器:
+        //群組選擇器:
+        //////javascript//////////////////////////////////////////
+        var list = document.getElementById("list");
+        for (i = 0; i < list.children.length; i++) {
+            list.children[i].className = "red line";
+            if (i % 2 == 0) {
+                list.children[i].className += " yellow";
+            }
+        }
+
+        //$('#list2>li:first-child').addClass('line');
+
+        var list2 = document.getElementById("list2");
+        list2.children[0].className = "line";
+
+
+
+    </script>
+
+</body>
+</html>

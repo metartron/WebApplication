@@ -89,6 +89,9 @@
     <Content Include="19JS_Test.html" />
     <Content Include="20Password.html" />
     <Content Include="21JSAudio.html" />
+    <Content Include="22JS_DOM.html" />
+    <Content Include="23jQuery_intro.html" />
+    <Content Include="24jQuery_CSS.html" />
     <Content Include="Chrysanthemum.jpg" />
     <Content Include="font\WEBDINGS.svg" />
     <Content Include="images2\Desert.jpg" />
@@ -111,6 +114,11 @@
     <Content Include="mp3\brave.mp3" />
     <Content Include="Player.js" />
     <Content Include="PlayerStyle.css" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +129,8 @@
     <Content Include="font\WEBDINGS.eot" />
     <Content Include="font\WEBDINGS.woff" />
     <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
