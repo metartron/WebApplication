@@ -14,7 +14,7 @@
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MySystemConnectionString1 %>" SelectCommand="SELECT * FROM [Products]"></asp:SqlDataSource>
             
             <div class="table-responsive">
-            <asp:GridView GridLines="None" CssClass="table table-hover" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+            <asp:GridView GridLines="None" CssClass="table table-hover" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnRowDataBound="GridView1_RowDataBound">
                 <Columns>
                     <asp:BoundField DataField="Product_ID" HeaderText="Product_ID" SortExpression="Product_ID" />
                     <asp:BoundField DataField="Product_Name" HeaderText="Product_Name" SortExpression="Product_Name" />
@@ -32,8 +32,16 @@
                         <ItemTemplate>
                             <asp:Label ID="Label1" runat="server" Text='<%# Eval("Product_Intro").ToString().Replace("\n","<br>") %>'></asp:Label>
                         </ItemTemplate>
+
                     </asp:TemplateField>
+
                     <asp:CheckBoxField DataField="Product_Status" HeaderText="Product_Status" SortExpression="Product_Status" />
+
+                    <asp:TemplateField HeaderText="QRCode">
+                        <ItemTemplate>
+                        <asp:Image runat="server" ID="Image1" ></asp:Image>
+                            </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
             </asp:GridView>
                 </div>
