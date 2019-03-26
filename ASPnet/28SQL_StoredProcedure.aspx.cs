@@ -13,5 +13,10 @@ namespace ASPnet
         {
 
         }
+
+        protected void ddltablename_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridView3.DataBind();
+        }
     }
 }

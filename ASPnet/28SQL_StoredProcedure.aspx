@@ -24,6 +24,30 @@
             <asp:GridView ID="GridView2" runat="server"  DataSourceID="SqlDataSource2"  >
                 
             </asp:GridView>
+
+             <%--===================================================================--%>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:教務系統ConnectionString %>" SelectCommand="select TABLE_NAME from INFORMATION_SCHEMA.TABLES
+where TABLE_TYPE='base table'"></asp:SqlDataSource>
+            <asp:DropDownList ID="ddltablename" runat="server" DataSourceID="SqlDataSource3" DataTextField="TABLE_NAME" DataValueField="TABLE_NAME" AutoPostBack="True" OnSelectedIndexChanged="ddltablename_SelectedIndexChanged"></asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:教務系統ConnectionString %>" SelectCommand="table_query" SelectCommandType="StoredProcedure">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="ddltablename" Name="tableName" Type="String"  />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:GridView ID="GridView3" runat="server" DataSourceID="SqlDataSource4"></asp:GridView>
+            <%--===================================================================--%>
+            產品編號：<asp:TextBox ID="txtPID" runat="server"></asp:TextBox>
+            <asp:Button ID="Button1" runat="server" Text="檢查可用性" />
+            <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:MySystemConnectionString1 %>" 
+                SelectCommand="check_productID" SelectCommandType="StoredProcedure">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="txtPID" Name="productID" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:GridView ID="GridView4" runat="server"  DataSourceID="SqlDataSource5">
+                
+            </asp:GridView>
+
         </div>
     </form>
 </body>
