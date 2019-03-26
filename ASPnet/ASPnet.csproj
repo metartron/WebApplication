@@ -98,6 +98,9 @@
     <Content Include="27DataList-Edit.aspx" />
     <Content Include="28SQL_StoredProcedure.aspx" />
     <Content Include="29QR_Code.aspx" />
+    <Content Include="30ADOnet_SqlDataAdapter.aspx" />
+    <Content Include="31ADOnet_SqlDataReader.aspx" />
+    <Content Include="32Product_Search_QR_Code.aspx" />
     <Content Include="images\bottom.jpg" />
     <Content Include="images\left.jpg" />
     <Content Include="images\top.jpg" />
@@ -362,6 +365,27 @@
     </Compile>
     <Compile Include="29QR_Code.aspx.designer.cs">
       <DependentUpon>29QR_Code.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="30ADOnet_SqlDataAdapter.aspx.cs">
+      <DependentUpon>30ADOnet_SqlDataAdapter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="30ADOnet_SqlDataAdapter.aspx.designer.cs">
+      <DependentUpon>30ADOnet_SqlDataAdapter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="31ADOnet_SqlDataReader.aspx.cs">
+      <DependentUpon>31ADOnet_SqlDataReader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="31ADOnet_SqlDataReader.aspx.designer.cs">
+      <DependentUpon>31ADOnet_SqlDataReader.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="32Product_Search_QR_Code.aspx.cs">
+      <DependentUpon>32Product_Search_QR_Code.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="32Product_Search_QR_Code.aspx.designer.cs">
+      <DependentUpon>32Product_Search_QR_Code.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

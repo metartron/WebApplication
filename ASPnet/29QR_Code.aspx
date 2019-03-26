@@ -15,7 +15,7 @@
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             
             <asp:Button ID="Button1" runat="server" Text="產生QR Code" OnClick="Button1_Click" />
-
+            <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" />
         </div>
     </form>
 </body>
