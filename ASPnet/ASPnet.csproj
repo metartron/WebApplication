@@ -101,6 +101,7 @@
     <Content Include="30ADOnet_SqlDataAdapter.aspx" />
     <Content Include="31ADOnet_SqlDataReader.aspx" />
     <Content Include="32Product_Search_QR_Code.aspx" />
+    <Content Include="33Member_Registeration.aspx" />
     <Content Include="images\bottom.jpg" />
     <Content Include="images\left.jpg" />
     <Content Include="images\top.jpg" />
@@ -386,6 +387,13 @@
     </Compile>
     <Compile Include="32Product_Search_QR_Code.aspx.designer.cs">
       <DependentUpon>32Product_Search_QR_Code.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="33Member_Registeration.aspx.cs">
+      <DependentUpon>33Member_Registeration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="33Member_Registeration.aspx.designer.cs">
+      <DependentUpon>33Member_Registeration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
