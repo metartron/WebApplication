@@ -92,6 +92,11 @@
     <Content Include="22JS_DOM.html" />
     <Content Include="23jQuery_intro.html" />
     <Content Include="24jQuery_CSS.html" />
+    <Content Include="26jQuery_Selector2.html" />
+    <Content Include="25jQuery_Selector.html" />
+    <Content Include="27jQuery_DOM.html" />
+    <Content Include="28GridView.aspx" />
+    <Content Include="28jQuery_GoogleAPI.html" />
     <Content Include="Chrysanthemum.jpg" />
     <Content Include="font\WEBDINGS.svg" />
     <Content Include="images2\Desert.jpg" />
@@ -122,6 +127,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="28GridView.aspx.cs">
+      <DependentUpon>28GridView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="28GridView.aspx.designer.cs">
+      <DependentUpon>28GridView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
