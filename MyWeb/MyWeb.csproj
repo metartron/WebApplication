@@ -96,7 +96,11 @@
     <Content Include="25jQuery_Selector.html" />
     <Content Include="27jQuery_DOM.html" />
     <Content Include="28GridView.aspx" />
-    <Content Include="28jQuery_GoogleAPI.html" />
+    <Content Include="29Query_GoogleAPI.html" />
+    <Content Include="31jQuery_Event2.html" />
+    <Content Include="30jQuery_Event.html" />
+    <Content Include="32jQuery_MouseEvent.html" />
+    <Content Include="Cat.html" />
     <Content Include="Chrysanthemum.jpg" />
     <Content Include="font\WEBDINGS.svg" />
     <Content Include="images2\Desert.jpg" />
