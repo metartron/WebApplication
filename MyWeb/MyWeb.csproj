@@ -100,6 +100,11 @@
     <Content Include="31jQuery_Event2.html" />
     <Content Include="30jQuery_Event.html" />
     <Content Include="32jQuery_MouseEvent.html" />
+    <Content Include="33jQuery_KeyBoardEvent.html" />
+    <Content Include="34jQuery_ShowHide.html" />
+    <Content Include="35jQuery_Slide.html" />
+    <Content Include="36jQuery_fade.html" />
+    <Content Include="37jQuery_Basic_Animate.html" />
     <Content Include="Cat.html" />
     <Content Include="Chrysanthemum.jpg" />
     <Content Include="font\WEBDINGS.svg" />
@@ -113,6 +118,7 @@
     <Content Include="images\banner2.jpg" />
     <Content Include="images\bottom.jpg" />
     <Content Include="images\car.png" />
+    <Content Include="images\Desert.jpg" />
     <Content Include="images\Koala.jpg" />
     <Content Include="images\left.jpg" />
     <Content Include="images\Lighthouse.jpg" />

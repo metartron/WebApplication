@@ -8,6 +8,9 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 
+using System.Net.Mail;
+using System.Net;
+
 namespace ASPnet
 {
     public partial class _33Member_Registeration : System.Web.UI.Page
@@ -56,7 +59,7 @@ namespace ASPnet
             {
                 try
                 {
-                    SqlCommand Cmd = new SqlCommand("insert into members values (@account,hashbytes('sha2_256',@pwd),@name,@birthday,@email,@gender,@edu,@note,@photo)", Conn);
+                    SqlCommand Cmd = new SqlCommand("insert into members values (@account,hashbytes('sha2_256',@pwd),@name,@birthday,@email,@gender,@edu,@note,@photo,@IsAuth)", Conn);
                     Cmd.Parameters.AddWithValue("@account", txtAccount.Text);
                     Cmd.Parameters.AddWithValue("@pwd", txtPwd.Text);
                     Cmd.Parameters.AddWithValue("@name", txtName.Text);
@@ -65,6 +68,9 @@ namespace ASPnet
                     Cmd.Parameters.AddWithValue("@gender", rblGender.SelectedValue);
                     Cmd.Parameters.AddWithValue("@edu", ddlEduLevel.SelectedValue);
                     Cmd.Parameters.AddWithValue("@note", txtNote.Text);
+                    Cmd.Parameters.AddWithValue("@IsAuth", false);
+
+
                     if (fulPhoto.PostedFile.ContentType == "application/octet-stream")
                     {
                         Cmd.Parameters.AddWithValue("@photo", null);
@@ -77,27 +83,29 @@ namespace ASPnet
                     if (fulPhoto.PostedFile.ContentType == "image/jpeg")
                     {
                         iCount = Cmd.ExecuteNonQuery();
+                        SendAuthMail(txtEmail.Text, txtAccount.Text);
                     }
                     else
                     {
                         lblPhoto.Text = "照片格式錯誤!";
                     }
-                    
+
                     Conn.Close();
 
-                    if (iCount > 0)
-                    {
-                        Response.Redirect("17GridView_DataSource.aspx");
-                    }
+                    //if (iCount > 0)
+                    //{
+                        //Response.Redirect("17GridView_DataSource.aspx");
+                    //}
+
                 }
                 catch (Exception ex)
                 {
                     Response.Write(ex.Message);
                 }
             }
-
         }
 
+        #region CustomValidator1_ServerValidate
         protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
             SqlCommand Cmd = new SqlCommand("select dbo.fnCheckMemberAccount(@account)", Conn);
@@ -116,6 +124,23 @@ namespace ASPnet
             //    args.IsValid = false;
 
             Conn.Close();
+        }
+        #endregion
+
+        protected void SendAuthMail(string toMail, string account)
+        {
+            SmtpClient myMail = new SmtpClient("msa.hinet.net");
+            MailAddress from = new MailAddress("metartron@gmail.com", "天晴好多雲");
+            MailAddress to = new MailAddress(toMail);
+            MailMessage Msg = new MailMessage(from, to);
+            Msg.Subject = "會員註冊認證信";
+            Msg.Body = "請點擊下列超連結完成會員註冊認證<br /> <br /><a href='http://localhost:62424/35Auth_OK.aspx?account=" + account + "' >請點我</a>";
+
+            Msg.IsBodyHtml = true;
+
+            myMail.Send(Msg);
+
+            Response.Write("<script>alert('恭喜您完成會員註冊資料填寫，請至您的信箱收取認證信進行認證，方能啟用會員！');</script>");
         }
     }
 }

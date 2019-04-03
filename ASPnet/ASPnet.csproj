@@ -102,6 +102,10 @@
     <Content Include="31ADOnet_SqlDataReader.aspx" />
     <Content Include="32Product_Search_QR_Code.aspx" />
     <Content Include="33Member_Registeration.aspx" />
+    <Content Include="34Smtp_Client.aspx" />
+    <Content Include="35Auth_OK.aspx" />
+    <Content Include="36FormView.aspx" />
+    <Content Include="Cat.html" />
     <Content Include="images\bottom.jpg" />
     <Content Include="images\left.jpg" />
     <Content Include="images\top.jpg" />
@@ -395,9 +399,34 @@
     <Compile Include="33Member_Registeration.aspx.designer.cs">
       <DependentUpon>33Member_Registeration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="34Smtp_Client.aspx.cs">
+      <DependentUpon>34Smtp_Client.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="34Smtp_Client.aspx.designer.cs">
+      <DependentUpon>34Smtp_Client.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="35Auth_OK.aspx.cs">
+      <DependentUpon>35Auth_OK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="35Auth_OK.aspx.designer.cs">
+      <DependentUpon>35Auth_OK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="36FormView.aspx.cs">
+      <DependentUpon>36FormView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="36FormView.aspx.designer.cs">
+      <DependentUpon>36FormView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="36GetMemberPhoto.ashx.cs">
+      <DependentUpon>36GetMemberPhoto.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="36GetMemberPhoto.ashx" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

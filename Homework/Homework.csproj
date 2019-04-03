@@ -69,14 +69,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="16Homework4.aspx" />
+    <Content Include="AudioPlayer.css" />
+    <Content Include="AudioPlayer.js" />
     <Content Include="css\Player.css" />
     <Content Include="HW1.aspx" />
     <Content Include="HW2.aspx" />
     <Content Include="HW3.aspx" />
     <Content Include="HW3_AudioPlayer.html" />
     <Content Include="HW4.aspx" />
+    <Content Include="HW4.html" />
     <Content Include="HW5.aspx" />
-    <Content Include="js\Player.js" />
+    <Content Include="mp3\chord -  Dependent Official Music Video.mp3" />
+    <Content Include="mp3\complacentOfficial Music Video.mp3" />
+    <Content Include="mp3\Dependent.jpg" />
+    <Content Include="mp3\Four Seasons.jpg" />
+    <Content Include="mp3\Half a Life Official Music Video.mp3" />
+    <Content Include="mp3\Jolin Tsai Life SucksOfficial Music Video.mp3" />
+    <Content Include="mp3\Life Sucks.jpg" />
+    <Content Include="mp3\Life Sucks.txt" />
+    <Content Include="mp3\MOMOLAND.jpg" />
+    <Content Include="mp3\MV MOMOLAND  I m So Hot.mp3" />
+    <Content Include="mp3\Self-complacent.jpg" />
+    <Content Include="mp3\TAEYEON   Four Seasons MV.mp3" />
     <Content Include="poker_img\1.gif" />
     <Content Include="poker_img\10.gif" />
     <Content Include="poker_img\11.gif" />
@@ -129,6 +143,11 @@
     <Content Include="poker_img\7.gif" />
     <Content Include="poker_img\8.gif" />
     <Content Include="poker_img\9.gif" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +197,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
