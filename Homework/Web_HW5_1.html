@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        #tb1 {
+            width: 90%;
+            margin: auto;
+            border:1px solid white;
+        }
+
+            #tb1 td {
+                border: 1px solid white;
+            }
+
+            #tb1 thead tr {
+                background-color: #383838;
+                color: white;
+            }
+
+            #tb1 thead th {
+                border: 1px solid white;
+            }
+
+            #tb1 tbody tr:nth-child(2n+1) {
+                background-color: #acacac;
+            }
+
+            #tb1 tbody tr:nth-child(2n) {
+                background-color: white;
+            }
+
+            #tb1 tbody tr:hover {
+                background-color:cornflowerblue;
+                color: white;
+                border: 3px solid black;
+            }
+    </style>
+</head>
+<body>
+    <table id="tb1"></table>
+
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script>
+        $.ajax({
+            type: 'GET',
+            url: 'cas.json',
+            format: 'json',
+            success: function (JData) {
+                //alert(JData[0][0]);
+                $('#tb1').append("<thead><tr><th>公司名稱</th><th>公司地址</th><th>電話</th><th>產品類別</th><th>產品種類</th><th>產品名稱</th></tr></thead>");
+                $('#tb1').append("<tbody>");
+                for (var i = 0; i < JData.length; i++) {
+                    $('#tb1').append("<tr><td>" + JData[i].Factory_CName + "</td><td>" + JData[i].Factory_Address + "</td><td>" + JData[i].Factory_Tel + "</td><td>" + JData[i].Material_Name + "</td><td>" + JData[i].PType_Name + "</td><td>" + JData[i].Product_Name+"</td></tr>");
+                }
+                $('#tb1').append("</tbody>");
+            },
+            error: function () {
+                alert('Error!!');
+            }
+
+
+        });
+    </script>
+</body>
+</html>

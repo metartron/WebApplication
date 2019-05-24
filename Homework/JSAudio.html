@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--
+    <link href="PlayerStyle.css" rel="stylesheet" />
+    <link href="AudioPlayer.css" rel="stylesheet" />
+    -->
+    <!--<link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="Audio.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css'>
+    <link rel="stylesheet" href="PlayerStyle.css">
+</head>
+<body>
+
+    <audio id="audio">
+        <!--controls="controls"-->
+        <!--<source id="song" src="mp3/halflife.mp3" type="audio/mpeg" title="一半人生 五月天" />-->
+        <source id="song" type="audio/mpeg" />
+    </audio>
+
+    
+    <div id="ControlPanel">
+        
+        <div class="album">
+            <!--歌曲圖片-->
+            <div class="photo"></div>
+            <!--歌曲圖片-->
+            <div class="infos">
+                <div class="song"><span>Flamingo</span><small>Oliver Heldens</small></div>
+            </div>
+        </div>
+
+        <div class="dashboard">
+            <div class="list">
+                <div class="list-btn"><span></span></div>
+            </div>
+            <div class="player">
+                <!--歌曲目前撥放時間/歌曲總時間-->
+                <div class="time"><small class="current">0:56</small> / <small class="duration">3:04</small></div>
+                <!--歌曲進度條-->
+                <div class="time-rail">
+                    <div class="thumb"></div>
+                    <div class="track"></div>
+                </div>
+            </div>
+            <div class="action-button">
+                <a class="random">
+                    <i class="fa fa-random"></i>
+                </a>
+                <a class="prev">
+                    <i class="fa fa-step-backward"></i>
+                </a>
+                <a class="play-pause">
+                    <i class="fa fa-pause"></i>
+                </a>
+                <a class="stop">
+                    <i class="fa fa-stop"></i>
+                </a>
+                <a class="next">
+                    <i class="fa fa-step-forward"></i>
+                </a>
+                <a class="repeat">
+                    <i class="fa fa-repeat"></i>
+                </a>
+                <a class="volume">
+                    <i class="fa fa-volume-up"></i>
+                    <i class="fa fa-recyle"></i>
+                </a>
+            </div>
+        </div>
+
+
+      
+        <div>
+
+            <div id="volume" class="progress" style="width:70%;float:left;margin:auto;height:5px">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" id="vol" style="width:50%">50</div>
+            </div>
+            <!--音量增減-->
+            <div id="volM"><i class="fas fa-volume-down cadetblue" aria-hidden="true" style="width:10%;float:left;margin:auto"></i></div>
+            <div id="volP"><i class="fas fa-volume-up cadetblue" aria-hidden="true" style="width:10%;float:left;margin:auto"></i></div>
+
+        </div>
+        <!--下拉選單選擇撥放歌曲-->
+        <select id="music"></select>
+
+
+
+
+        <!--歌曲控制按鈕-->
+        <div id="FuncBtn">
+            <div class="row justify-content-around">
+
+                <span id="prevsong"><i class="fa fa-fast-backward cadetblue" aria-hidden="true"></i></span>
+                <span id="prevtime"><i class="fa fa-backward cadetblue" aria-hidden="true"></i></span>
+                <span id="play"><i class="far fa-play-circle fa-2x cadetblue" aria-hidden="true"></i></span>
+                <span id="nexttime"><i class="fa fa-forward cadetblue" aria-hidden="true"></i></span>
+                <span id="nextsong"><i class="fa fa-fast-forward cadetblue" aria-hidden="true"></i></span>
+
+            </div>
+
+            <div class="row">
+                <div class="col1 col-1 fas fa-redo cadetblue"></div>
+                <div class="col2 col-1 fa fa-random cadetblue"></div>
+                <div class="col3 col-2 fa fa-recycle cadetblue"></div>
+            </div>
+
+            <div>
+
+                <!--<span id="pause">;</span>-->
+                <!--<span id="stop"><i class="fa fa-stop" aria-hidden="true"></i></span>
+            <span id="muted"><i class="fas fa-volume-mute"></i></span>-->
+                <!--<span id="loop"><i class="fas fa-redo"></i></span>
+            <span id="random"><i class="fa fa-random" aria-hidden="true"></i></span>
+            <span id="allloop"><i class="fa fa-recycle" aria-hidden="true"></i></span>-->
+                <span id="songbook"><i class="fa fa-music" aria-hidden="true"></i></span>
+
+            </div>
+
+
+        </div>
+
+        <!--<div id="settime">
+        <div id="progress"></div>
+    </div>-->
+
+        <div id="InfoPanel">
+            <div id="duration">00:00 / 00:00</div>
+            <marquee id="info">請按播放鈕~~~~~</marquee>
+            <div id="info2"></div>
+        </div>
+        <hr />
+        <!--歌本-->
+        <div id="book" class="hide" title="hide">
+            <div id="Sbook">
+                <div title="mp3/halflife.mp3">一半人生 五月天</div>
+                <div title="mp3/brave.mp3">終於勇敢了</div>
+                <div title="mp3/joker.mp3">肆無忌憚</div>
+                <div title="mp3/halflife.mp3">一半人生 五月天 1</div>
+                <div title="mp3/brave.mp3">終於勇敢了 1</div>
+                <div title="mp3/joker.mp3">肆無忌憚 1</div>
+                <div title="mp3/halflife.mp3">一半人生 五月天 2</div>
+                <div title="mp3/brave.mp3">終於勇敢了 2</div>
+                <div title="mp3/joker.mp3">肆無忌憚 2</div>
+                <div title="mp3/halflife.mp3">一半人生 五月天 3</div>
+                <div title="mp3/brave.mp3">終於勇敢了 3</div>
+                <div title="mp3/joker.mp3">肆無忌憚 3</div>
+            </div>
+            <div id="Tbook">
+
+            </div>
+            <div id="btnUpdateMusic">
+                更新歌單
+            </div>
+        </div>
+    </div>
+    
+    <script src="Audio.js"></script>
+</body>
+</html>

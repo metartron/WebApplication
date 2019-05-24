@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        #tb1 {
+            width: 90%;
+            margin: auto;
+            border:1px solid white;
+        }
+
+            #tb1 td {
+                border: 1px solid white;
+            }
+
+            #tb1 thead tr {
+                background-color: #383838;
+                color: white;
+            }
+
+            #tb1 thead th {
+                border: 1px solid white;
+            }
+
+            #tb1 tbody tr:nth-child(2n+1) {
+                background-color: #acacac;
+            }
+
+            #tb1 tbody tr:nth-child(2n) {
+                background-color: white;
+            }
+
+            #tb1 tbody tr:hover {
+                background-color:cornflowerblue;
+                color: white;
+                border: 3px solid black;
+            }
+    </style>
+</head>
+<body>
+    <table id="tb1"></table>
+
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script>
+        $.ajax({
+            type: 'GET',
+            url: 'PoultryTransBoiledChickenData.json',
+            format: 'json',
+            success: function (JData) {
+                //alert(JData[0][0]);
+                $('#tb1').append("<thead><tr><th>日期</th><th>農曆</th><th>白肉雞(2.0Kg以上)</th><th>白肉雞(1.75-1.95Kg)</th><th>白肉雞(門市價高屏)</th><th>雞蛋(產地)</th></tr></thead>");
+                $('#tb1').append("<tbody>");
+                for (var i = 0; i < JData.length; i++) {
+                    $('#tb1').append("<tr><td>" + JData[i]['日期'] + "</td><td>" + JData[i]['農曆'] + "</td><td>" + JData[i]['白肉雞(2.0Kg以上)'] + "</td><td>" + JData[i]['白肉雞(1.75-1.95Kg)'] + "</td><td>" + JData[i]['白肉雞(門市價高屏)'] + "</td><td>" + JData[i]['雞蛋(產地)']+"</td></tr>");
+                }
+                $('#tb1').append("</tbody>");
+            },
+            error: function () {
+                alert('Error!!');
+            }
+
+
+        });
+    </script>
+</body>
+</html>

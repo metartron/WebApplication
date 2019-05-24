@@ -105,6 +105,17 @@
     <Content Include="35jQuery_Slide.html" />
     <Content Include="36jQuery_fade.html" />
     <Content Include="37jQuery_Basic_Animate.html" />
+    <Content Include="38jQuery_Pokamon_Animate.html" />
+    <Content Include="39Ajax_JSON.html" />
+    <Content Include="40Ajax_WebAPI.html" />
+    <Content Include="41Ajax_WebAPI2.html" />
+    <Content Include="animate\ball.gif" />
+    <Content Include="animate\ding.gif" />
+    <Content Include="animate\pica.gif" />
+    <Content Include="animate\pokemonBG.png" />
+    <Content Include="animate\PokemonGo.mp3" />
+    <Content Include="animate\PokemonGo2.mp3" />
+    <Content Include="animate\Reflection.mp3" />
     <Content Include="Cat.html" />
     <Content Include="Chrysanthemum.jpg" />
     <Content Include="font\WEBDINGS.svg" />
@@ -129,6 +140,7 @@
     <Content Include="mp3\brave.mp3" />
     <Content Include="Player.js" />
     <Content Include="PlayerStyle.css" />
+    <Content Include="ProductPrice.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

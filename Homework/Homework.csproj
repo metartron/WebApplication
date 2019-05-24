@@ -69,8 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="16Homework4.aspx" />
+    <Content Include="Audio.css" />
+    <Content Include="Audio.js" />
+    <Content Include="JSAudio.html" />
     <Content Include="AudioPlayer.css" />
     <Content Include="AudioPlayer.js" />
+    <Content Include="css\font-awesome.css" />
     <Content Include="css\Player.css" />
     <Content Include="HW1.aspx" />
     <Content Include="HW2.aspx" />
@@ -91,6 +95,8 @@
     <Content Include="mp3\MV MOMOLAND  I m So Hot.mp3" />
     <Content Include="mp3\Self-complacent.jpg" />
     <Content Include="mp3\TAEYEON   Four Seasons MV.mp3" />
+    <Content Include="Player.js" />
+    <Content Include="PlayerStyle.css" />
     <Content Include="poker_img\1.gif" />
     <Content Include="poker_img\10.gif" />
     <Content Include="poker_img\11.gif" />
@@ -143,6 +149,12 @@
     <Content Include="poker_img\7.gif" />
     <Content Include="poker_img\8.gif" />
     <Content Include="poker_img\9.gif" />
+    <Content Include="css\tachyons.min.css" />
+    <Content Include="Web_HW5_1 - 複製.html" />
+    <Content Include="Web_HW5_1.html" />
+    <Content Include="PoultryTransBoiledChickenData.json" />
+    <Content Include="Web_HW5_2.html" />
+    <Content Include="cas.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

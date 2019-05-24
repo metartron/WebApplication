@@ -1,0 +1,30 @@
+
+#ControlPanel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    width: 364px;
+    height: initial;
+    background-color: #463239;
+    box-shadow: 0 0 15px #535353;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+/*.img{
+  border-radius: 10px 10px 10px 10px;
+    display: block;
+    width: 100%;
+}
+
+#songpic{
+  margin: 2px;
+    border:5px solid pink;
+    background-color:pink;
+}
+
+.cadetblue {
+    color: cadetblue;
+}*/
